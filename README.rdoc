@@ -1,13 +1,12 @@
 == Project structure
 
--doc
---diagrama.asta
--README
+        doc
+          diagrama.asta
+        
+        README
 
 == Tools
-*Astah Community*
-
-FREE UML Modeling Tool for study of UML.
+*Astah Community*: FREE UML Modeling Tool for study of UML.
 
 * Install on Ubuntu:
 
