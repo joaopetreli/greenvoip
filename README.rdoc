@@ -1,5 +1,3 @@
-Green VoIP
-
 == Project structure
 
 -doc
