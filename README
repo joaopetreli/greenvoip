@@ -1,17 +1,18 @@
 Green VoIP
 
-==Project structure==
+== Project structure
+
 -doc
 --diagrama.asta
 -README
 
-==Tools==
-===Astah community===
+== Tools
+*Astah Community*
+
 FREE UML Modeling Tool for study of UML.
 
-Install on Ubuntu:
-[code]
-sudo apt-get install astah-community
-[/code]
+* Install on Ubuntu:
+
+        sudo apt-get install astah-community
 
 Or you can download it from http://astah.change-vision.com/en/product/astah-community.html
