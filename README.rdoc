@@ -6,7 +6,7 @@
         README
 
 == Tools
-*Astah Community*: FREE UML Modeling Tool for study of UML.
+*Astah* *Community*: FREE UML Modeling Tool for study of UML.
 
 * Install on Ubuntu:
 
