@@ -8,8 +8,5 @@
 == Tools
 *Astah* *Community*: FREE UML Modeling Tool for study of UML.
 
-* Install on Ubuntu:
-
-        sudo apt-get install astah-community
-
-Or you can download it from http://astah.change-vision.com/en/product/astah-community.html
+* Install:
+Download it from http://astah.change-vision.com/en/product/astah-community.html
