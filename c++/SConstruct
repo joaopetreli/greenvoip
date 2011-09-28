@@ -1,0 +1,13 @@
+import os
+
+env = Environment(ENV = os.environ)
+env.Append(CPPFLAGS='-Wall -Werror')
+env.Append(CPPPATH=['include/'])
+
+objects = []
+for root, subFolders, files in os.walk('src/lib'):
+  for file in files:
+    if (file.endswith(".cpp")):
+      objects.append(os.path.join(root, file))
+
+env.Object(objects)
