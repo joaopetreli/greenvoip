@@ -1,0 +1,9 @@
+# Ignore objects.
+*.o
+
+# Ignore astah backup file.
+*.bak
+
+# Ignore emacs backup files.
+\#*\#
+.\#*
