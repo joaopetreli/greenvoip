@@ -7,3 +7,9 @@
 # Ignore emacs backup files.
 \#*\#
 .\#*
+
+# Ignore eclipse config files
+java/greenvoip/bin/
+java/greenvoip/.classpath
+java/greenvoip/.project
+java/greenvoip/.settings/*
