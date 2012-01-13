@@ -30,8 +30,7 @@ public class SocketThread implements Runnable {
 			bufferedReader = new BufferedReader(inputStreamReader);
 			printWriter = new PrintWriter(socket.getOutputStream(), true);
 		} catch (IOException e) {
-			System.err
-					.println("Impossible to read from input and output streams.");
+			System.err.println("Impossible to read from input and output streams.");
 			e.printStackTrace();
 			return false;
 		}
