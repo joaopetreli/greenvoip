@@ -5,10 +5,12 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
-public class HandleSocket {
+public class HandleServerSocket {
 
 	private boolean stop = false;
+	private static final int TIMEOUT_TASK_FINISH = 10;
 	
 	private ExecutorService getExecutor(int threadPoolSize) {
 		ExecutorService executorService;
@@ -33,13 +35,16 @@ public class HandleSocket {
 				SocketThread socketThread = new SocketThread(socket);
 				executorService.execute(socketThread);
 			}
-			
+		
+			System.out.println("Wainting task(s) finish.");
+			executorService.awaitTermination(TIMEOUT_TASK_FINISH, TimeUnit.SECONDS);
 			serverSocket.close();
 		} catch (IOException e) {
-			System.out.println("Could not listen at port: " + port);
+			System.err.println("Could not listen at port: " + port);
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			System.err.println("An error ocurr while waiting task(s) finish.");
 			e.printStackTrace();
 		}
-
-		executorService.shutdown();
 	}
 }
