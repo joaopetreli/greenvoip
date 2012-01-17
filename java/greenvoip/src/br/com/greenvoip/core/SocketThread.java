@@ -50,7 +50,7 @@ public class SocketThread implements Runnable {
 			line = bufferedReader.readLine();
 
 			if (line != "") {
-				lineSplited = line.split(";");
+				lineSplited = line.split(" ");
 				from = Long.valueOf(lineSplited[0]);
 				to = Long.valueOf(lineSplited[1]);
 				return true;
@@ -66,6 +66,8 @@ public class SocketThread implements Runnable {
 		} catch (NumberFormatException e) {
 			System.err.println("Input stream was malformed.");
 			printWriter.println("Input stream was malformed.");
+			printWriter.println("Usage:");
+			printWriter.println("  <from> <to>");
 			e.printStackTrace();
 			return false;
 		}
@@ -83,19 +85,23 @@ public class SocketThread implements Runnable {
 	
 	private void printUserInfo(User user) {
 		printWriter.println();
-		printWriter.println("Id: " + user.getId());
-		printWriter.println("Nome: " + user.getName());
-		printWriter.println("Email: " + user.getEmail());
-		printWriter.println("Password: " + user.getPassword());
-		printWriter.println("Status: " + user.getStatus().toString());
-		printWriter.println("Number: " + user.getNumber());
-		printWriter.println("Credit: " + user.getCredit().getCredit());
+		printWriter.println("User information: ");
+		printWriter.println("  Id: " + user.getId());
+		printWriter.println("  Nome: " + user.getName());
+		printWriter.println("  Email: " + user.getEmail());
+		printWriter.println("  Password: " + user.getPassword());
+		printWriter.println("  Status: " + user.getStatus().toString());
+		printWriter.println("  Number: " + user.getNumber());
+		printWriter.println("  Credit: " + user.getCredit().getCredit());
 		printWriter.println();
 	}
 
 	@Override
 	public void run() {
-		init();
+		if (init() == false) {
+			closeResources();
+			return;
+		}
 
 		UserDAO userDAO = new UserDAO();
 		User user = userDAO.findUserByNumber(from);
