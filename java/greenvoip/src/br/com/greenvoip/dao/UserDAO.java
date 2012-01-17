@@ -13,8 +13,8 @@ public class UserDAO {
 		credit.setCredit(10.50);
 		
 		user.setId(1);
-		user.setName("João");
-		user.setEmail("joao@registro.br");
+		user.setName("Foo");
+		user.setEmail("foo@bar.com.br");
 		user.setPassword("AE013321FCD");
 		user.setStatus(Status.ACTIVE);
 		user.setCredit(credit);
